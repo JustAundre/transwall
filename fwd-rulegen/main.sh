@@ -59,7 +59,7 @@ while true; do
 	if [[ -z "${fields[1]}" ]]; then
 		plaintext+='finds requests from anywhere, '
 	elif
-		ip route get "${fields[1]}" &> /dev/null
+		ip route get "${fields[1]}" &>/dev/null
 		status="$?"
 		[[ ! "${status}" -eq 1 ]]
 	then
@@ -94,7 +94,7 @@ while true; do
 	if [[ -z "${fields[3]}" ]]; then
 		plaintext+='of any IP '
 	elif
-		ip route get "${fields[3]}" &> /dev/null
+		ip route get "${fields[3]}" &>/dev/null
 		status="$?"
 		[[ ! "${status}" -eq 1 ]]
 	then
