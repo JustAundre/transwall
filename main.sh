@@ -8,8 +8,8 @@
 # Environment Setup
 #
 cd "$(dirname "${0}")" || exit 1
-[[ -d "../lib/" ]] || exit 2
-for function in ../lib/*; do
+[[ -d "./lib" ]] || exit 2
+for function in "./lib/"*; do
 	source "${function}"
 done
 persistences=(
