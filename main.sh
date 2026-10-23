@@ -7,9 +7,11 @@
 #
 # Environment Setup
 #
-cd "$(dirname "${0}")" || exit 1
-[[ -d "./bash-lib" ]] || exit 2
-for function in "./bash-lib/"*; do
+# Load library functions
+BASE_DIR="$(dirname -- "$(realpath -- "${0}")")"
+cd "${BASE_DIR}" || exit 1
+[[ -d './bash-lib' ]] || exit 2
+for function in ./bash-lib/*.sh; do
 	source "${function}"
 done
 persistences=(
