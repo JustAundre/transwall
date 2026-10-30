@@ -129,9 +129,9 @@ while true; do
 	# Read fields character by character
 	# Backspace works as backspace.
 	# Change fields with [ENTER].
-	IFS='' read -sn1 'input[0]'
+	IFS='' read -r -s -n 1 'input[0]'
 	if [[ "${input[0]}" == $'\E' ]]; then
-		IFS='' read -sn2 'input[1]'
+		IFS='' read -r -s -n 2 'input[1]'
 	else
 		unset 'input[1]'
 	fi
